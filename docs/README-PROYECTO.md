@@ -1,17 +1,24 @@
 # TaskFlow — Frontend
 
-{{REEMPLAZAR: descripción breve del proyecto — 2-3 líneas}}
+Frontend de TaskFlow, una aplicación de gestión de tareas con tablero Kanban, autenticación real y conexión a la API REST de Laravel. Construido con React y Vite, consume la API protegida con Laravel Sanctum y permite a cada usuario gestionar únicamente sus propias tareas.
 
 ## Stack
 
-- React {{REEMPLAZAR: versión}} + Vite
+- React 18 + Vite
 - React Router
 - axios
 
 ## Cómo correrlo localmente
 
 ```bash
-{{REEMPLAZAR: pasos exactos — npm install, cp .env.example .env con la URL local del backend, npm run dev}}
+# 1. Instalar dependencias
+npm install
+
+# 2. Crear archivo .env con la URL del backend
+echo "VITE_API_URL=http://localhost:8000/api" > .env
+
+# 3. Levantar el servidor de desarrollo
+npm run dev
 ```
 
 ## Build de producción

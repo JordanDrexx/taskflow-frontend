@@ -10,6 +10,10 @@ function Board() {
 
   // Paso 5: reemplaza cambiarEstado por esta versión, que guarda el estado
   // nuevo en la API antes de actualizar la pantalla.
+  /**
+   * Actualiza el estado de una tarea enviando una petición PATCH a la API.
+   * Tras la confirmación del servidor, sincroniza el estado local (tasks) en React.
+   */
   const cambiarEstado = (id, nuevoEstado) => {
     api.patch(`/tasks/${id}`, { status: nuevoEstado })
       .then(() => setTasks(tasks.map((t) => (t.id === id ? { ...t, status: nuevoEstado } : t))));

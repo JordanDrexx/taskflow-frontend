@@ -4,6 +4,10 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import PrivateRoute from './components/PrivateRoute';
 
+// Tarea 3: imports para vista de detalle y edición
+import TaskDetail from './pages/TaskDetail';
+import TaskEdit from './pages/TaskEdit';
+
 function App() {
   // Paso 2 (Sesión 7): HashRouter (en vez de BrowserRouter) para que las
   // rutas funcionen en un hosting estático como GitHub Pages, que no sabe
@@ -22,6 +26,25 @@ function App() {
             </PrivateRoute>
           }
         />
+
+        {/* Tarea 3: rutas para vista de detalle y edición */}
+        <Route
+          path="/tasks/:id"
+          element={
+            <PrivateRoute>
+              <TaskDetail />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/tasks/:id/edit"
+          element={
+            <PrivateRoute>
+              <TaskEdit />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </HashRouter>
